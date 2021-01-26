@@ -11,15 +11,11 @@ export default class App extends Component {
   }
 
   componentDidMount = async () => {
-    // const response = await axios.get("/data")
 
-
-    // Соединение открыто
     socket.addEventListener('open', function (event) {
       socket.send('Hello Server!');
     });
 
-    // Наблюдает за сообщениями
     socket.addEventListener('message', async (event) => {
       console.log('Message from server ', event.data);
       const data = JSON.parse(event.data);
