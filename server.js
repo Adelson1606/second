@@ -1,5 +1,4 @@
 const express = require('express')
-const api = require('./server/routes/api')
 const bodyParser = require('body-parser')
 const http = require('http');
 const WebSocket = require('ws');
@@ -21,7 +20,7 @@ app.use(function (req, res, next) {
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
-app.use('/', api)
+
 
 
 // const proxyApi = 'https://raw.githubusercontent.com/a2u/free-proxy-list/master/free-proxy-list.txt';
